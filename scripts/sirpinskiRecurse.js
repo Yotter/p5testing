@@ -13,7 +13,6 @@ let delta = 0;
 let sideLength = 800;
 let minTriangleSize = 5;
 let DFSorBFS = DFS;
-
 function setup() {
     // Create the canvas
     createCanvas(windowWidth, windowHeight);
@@ -66,8 +65,8 @@ function draw() {
         
         // Calculate the midpoints of the triangle
         let midLeft = p5.Vector.lerp(topPos, leftPos, 0.5);
-        let midRight = p5.Vector.lerp(topPos, rightPos, 0.6);
-        let midBottom = p5.Vector.lerp(leftPos, rightPos, 0.4);
+        let midRight = p5.Vector.lerp(topPos, rightPos, 0.5);
+        let midBottom = p5.Vector.lerp(leftPos, rightPos, 0.5);
         
         // Draw the triangle
         stroke(0);

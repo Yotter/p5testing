@@ -8,7 +8,7 @@
 // EDITABLE VARIABLES
 
 let BIRTH = 3; // Number of neighbors to birth a cell
-let MIN = 1; // Minimum number of neighbors to keep a cell alive
+let MIN = 2; // Minimum number of neighbors to keep a cell alive
 let MAX = 3; // Maximum number of neighbors to keep a cell alive
 
 let initializeRandom = false; // Initialize the grid randomly, mark center as alive

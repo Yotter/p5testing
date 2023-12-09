@@ -21,8 +21,8 @@ function setup() {
     start = createVector(175, 360);
 
     // Define the start and end colors
-    endColor = color(255, 0, 0);
-    startColor = color(0, 255, 0);
+    endColor = color(0, 0, 255);
+    startColor = color(255, 0, 0);
 
     // Create the output image
     origImage.loadPixels();
@@ -128,7 +128,7 @@ function depth_color() {
         for (let j = 0; j < outImage.height; j++) {
             let depth = depths[i][j];
             if (depth >= 0) {
-                let c = lerpColor(startColor, endColor, (sin(depth * 0.1) + 1)/2);
+                let c = lerpColor(startColor, endColor, depth / maxDepth);
                 outImage.set(i, j, c);
             }
         }
