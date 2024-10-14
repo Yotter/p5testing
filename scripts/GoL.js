@@ -45,15 +45,15 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     grid = [];
     next = [];
-    liftetime = [];
+    lifetime = [];
     for (let x = 0; x < gridWidth; x++) {
         grid[x] = [];
         next[x] = [];
-        liftetime[x] = [];
+        lifetime[x] = [];
         for (let y = 0; y < gridHeight; y++) {
             grid[x][y] = 0;
             next[x][y] = 0;
-            liftetime[x][y] = 0;
+            lifetime[x][y] = 0;
         }
     }
     // Initialize the grid
@@ -84,7 +84,7 @@ function draw() {
         for (let y = 0; y < gridHeight; y++) {
             if (grid[x][y] == 1) {
 
-                let c = lerpColor(coldColor, hotColor, liftetime[x][y] / MAX_LIFETIME);
+                let c = lerpColor(coldColor, hotColor, lifetime[x][y] / MAX_LIFETIME);
                 fill(c);
                 stroke(0);
                 rect(x * cellSize, y * cellSize, cellSize, cellSize);
@@ -173,11 +173,11 @@ function update() {
                 next[x][y] = 1;
             } else if (state == 1 && (neighbors < MIN || neighbors > MAX)) {
                 next[x][y] = 0;
-                liftetime[x][y] = 0;
+                lifetime[x][y] = 0;
             } else {
                 next[x][y] = state;
                 if (state == 1) {
-                    liftetime[x][y] = liftetime[x][y] + 1;
+                    lifetime[x][y] = lifetime[x][y] + 1;
                 }
             }
         }
