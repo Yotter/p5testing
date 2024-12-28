@@ -62,16 +62,16 @@ function draw() {
                 locked = false;
             }
         }
-        
+
         // Calculate the midpoints of the triangle
         let midLeft = p5.Vector.lerp(topPos, leftPos, 0.5);
         let midRight = p5.Vector.lerp(topPos, rightPos, 0.5);
         let midBottom = p5.Vector.lerp(leftPos, rightPos, 0.5);
-        
+
         // Draw the triangle
         stroke(0);
         triangle(topPos.x, topPos.y, leftPos.x, leftPos.y, rightPos.x, rightPos.y);
-        
+
         // Add the three smaller triangles to the structure
         structure.push([topPos, midLeft, midRight]);
         structure.push([midLeft, leftPos, midBottom]);

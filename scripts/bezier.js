@@ -33,7 +33,7 @@ function updateGuideLinesHelper(ctrlPoints) {
         for (let i = 0; i < ctrlPoints.length - 1; i++) {
             guideLines.push([ctrlPoints[i], ctrlPoints[i + 1]]);
         }
-    
+
         // Find points on new lines
         let newPoints = [];
         for (let i = 0; i < ctrlPoints.length - 1; i++) {

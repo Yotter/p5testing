@@ -41,11 +41,11 @@ function draw() {
 
     // calculate the midpoint between newPoint and nextPoint
     let midPoint = p5.Vector.lerp(newPoint, nextPoint, 0.5);
-    
+
     // draw the midpoint
     strokeWeight(1);
     point(midPoint.x, midPoint.y);
-    
+
     // set newPoint to the midpoint
     newPoint = midPoint;
     // }
